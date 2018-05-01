@@ -313,7 +313,7 @@ gulp.task('build:clean', () => {
 });
 
 gulp.task('default', ['watch', 'webserver']);
-gulp.task('build', ['mergeJson', 'svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
+gulp.task('build', ['svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
 
 
 function isMax(mq) {
