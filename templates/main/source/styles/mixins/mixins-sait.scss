@@ -36,6 +36,7 @@
 		}
 	}
 }
+
 @mixin btnBg2($bg:#b2b4b7, $bgrepeat: no-repeat, $color:#fff, $border: none, $shadow:none, $font-size:14px, $text-transform:uppercase, $font-weight:400, $padding:0 25px, $border-radius:22px, $height:44px, $line-height: $height, $display: inline-block, $bgHov:#b2b4b7, $shadowHov:0 6px 12px rgba(178, 180, 183, 0.3), $colorHov:#fff, $width: auto) {
 	& {
 		background-color: $bg;

@@ -24,6 +24,21 @@ gulp.task('webserver', () => {
 	browserSync.init(configWebserver);
 });
 
+gulp.task('mergeJson', () => {
+	gulp.src(config.src.source.json.src)
+		.pipe(plugins.mergeJson({
+	        fileName: 'data.json',
+	        edit: (parsedJson, file) => {
+	            if (parsedJson.someValue) {
+	                delete parsedJson.otherValue;
+	            }
+
+	            return parsedJson;
+	        },
+	    }))
+	    .pipe(gulp.dest(config.src.source.json.dest));
+});
+
 gulp.task('js', () => {
 
 	gulp.src(config.src.source.js.src)
@@ -80,6 +95,12 @@ gulp.task('css', () => {
 			}
 		}))
 		.pipe(plugins.sourcemaps.init())
+		.pipe(plugins.sassGlob({
+			ignorePaths: [
+				'./templates/main/source/styles/base/variables.scss',
+				'./templates/main/source/styles/base/mixins.scss'
+			]
+		}))
 		.pipe(plugins.sass())
 		.pipe(plugins.cssUrlAdjuster({
 			prepend: '../images/'
@@ -98,6 +119,12 @@ var configHtml = {
 	'unformatted': ['sub', 'sup', 'b', 'u']
 }
 
+// De-caching for Data files
+function requireUncached( $module ) {
+    delete require.cache[require.resolve( $module )];
+    return require( $module );
+}
+
 gulp.task('ajax', () => {
 	return gulp.src(config.src.source.ajax.src)
 		.pipe(plugins.plumber({
@@ -105,6 +132,11 @@ gulp.task('ajax', () => {
 				console.log(err)
 			}
 		}))
+		.pipe(
+			plugins.data(function() {
+				return requireUncached(config.src.source.json.file);
+			})
+		)
 		.pipe(plugins.nunjucksRender({
 			path: [config.src.source.components],
 			data: {
@@ -117,12 +149,18 @@ gulp.task('ajax', () => {
 });
 
 gulp.task('nunjucks', () => {
+
 	return gulp.src(config.src.source.html.src)
 		.pipe(plugins.plumber({
 			errorHandler: (err) => {
 				console.log(err)
 			}
 		}))
+		.pipe(
+			plugins.data(function() {
+				return requireUncached(config.src.source.json.file);
+			})
+		)
 		.pipe(plugins.nunjucksRender({
 			path: [config.src.source.components],
 			data: {
@@ -239,7 +277,16 @@ gulp.task('watch:images', () => {
 	});
 });
 
+gulp.task('watch:mergeJson', () => {
+	plugins.watch(config.src.source.json.src, () => {
+		gulp.start('mergeJson');
+	});
+});
+
 gulp.task('watch', () => {
+	plugins.watch(config.src.watch.json, () => {
+		gulp.start('mergeJson');
+	});
 	plugins.watch(config.src.watch.images, () => {
 		gulp.start('images');
 	});
@@ -266,7 +313,7 @@ gulp.task('build:clean', () => {
 });
 
 gulp.task('default', ['watch', 'webserver']);
-gulp.task('build', ['svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
+gulp.task('build', ['mergeJson', 'svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
 
 
 function isMax(mq) {

@@ -3,6 +3,14 @@
 		"src": {
 			"server": "./templates/main/build/",
 			"source": {
+				"json": {
+					"src": [
+						"./templates/main/source/components/**/*.json",
+						"./templates/main/source/pages/*.json"
+					],
+					"dest": "./templates/main/source/data/",
+					"file": "./templates/main/source/data/data.json"
+				},
 				"js": {
 					"copy": [
 						"./templates/main/source/js/libs/jquery-3.2.1.min.js",
@@ -66,13 +74,19 @@
 				}
 			},
 			"watch": {
+				"json": [
+						"./templates/main/source/components/**/*.json",
+						"./templates/main/source/pages/*.json"
+				],
 				"html": [
 					"./templates/main/source/pages/*.html",
-					"./templates/main/source/components/**/*.html"
+					"./templates/main/source/components/**/*.html",
+					"./templates/main/source/data/data.json"
 				],
 				"ajax": [
 					"./templates/main/source/ajax/*.html",
-					"./templates/main/source/components/**/*.html"
+					"./templates/main/source/components/**/*.html",
+					"./templates/main/source/data/data.json"
 				],
 				"css": [
 					"./templates/main/source/components/**/*.scss",
