@@ -12,4 +12,5 @@
 12. Этот файл __templates/main/source/js/static/frontend-works.js__ специальный, сюда складываем __ajax__ и т.д, что в будущем программист перенесет на сайт, так как он потом при натяжке подключаться не будет
 13. Для иконок svg используется сервис __https://icongr.am/__ , подключается в стилях просто ```css background: url(https://icongr.am/fontawesome/ambulance.svg?size=34&color=000000);```, плюс использовать можно ```css background: svg-load('auth.svg', fill='#c70000') no-repeat;``` для него файлы svg сохраняем в папку __templates/main/source/images/svg-icons__
 14. Настройки лежат тут __main.config.json__
-15. Две команды есть, __gulp__ и __gulp build__
+15. Все повтояющиеся блоки выносим в компоненты
+16. Две команды есть, __gulp__ и __gulp build__
