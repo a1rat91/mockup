@@ -10,4 +10,5 @@
 10. В стилях путь к картинкам не прописываем, только название файла, пути в html файлах можем прописывать как ```html <img src="{{src}}logo.png" alt="" class="logo__pic">```
 11. Папка templates/main/source/js/libs и templates/main/source/js/static все содержимое переносится, в libs только библиотеки должны лежать.
 12. Этот файл templates/main/source/js/static/frontend-works.js специальный, сюда складываем ajax и т.д, что в будущем программист перенесет на сайт, так как он потом при натяжке подключаться не будет
+13. Для иконок svg используется сервис https://icongr.am/ , подключается в стилях просто ```css background: url(https://icongr.am/fontawesome/ambulance.svg?size=34&color=000000);```, плюс использовать можно ```css background: svg-load('auth.svg', fill='#c70000') no-repeat;``` для него файлы svg сохраняем в папку templates/main/source/images/svg-icons
 13. Две команды есть, gulp и gulp build
