@@ -1,28 +1,16 @@
 .header {
-	position: relative;
-	padding-top: 20px;
+	display: flex;
+	justify-content: space-between;
 
-	&__blocks {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+	.header-inner & {
+		flex-direction: row-reverse;
 	}
 
-	&__block {
+	&__logo {
 
-		&_wide {
-			flex-grow: 1;
-		}
 	}
 
-	@media(max-width:768px) {
+	&__phone {
 
-		&__block {
-
-			&_wide {
-				order: 1;
-				flex-grow: inherit;
-			}
-		}
 	}
 }

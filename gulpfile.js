@@ -102,7 +102,7 @@ gulp.task('css', () => {
 			]
 		}))
 		.pipe(plugins.sass())
-		.pipe(plugins.cssUrlAdjuster({
+		.pipe(plugins.cssUrlChange({
 			prepend: '../images/'
 		}))
 		.pipe(plugins.postcss(processors))

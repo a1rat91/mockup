@@ -2765,14 +2765,14 @@ gulp-concat@^2.6.1:
     through2 "^2.0.0"
     vinyl "^2.0.0"
 
-gulp-css-url-adjuster@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/gulp-css-url-adjuster/-/gulp-css-url-adjuster-0.2.3.tgz#5094e39099b8ae2223e72de5ceff067d2f5f1d47"
+gulp-css-url-change@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gulp-css-url-change/-/gulp-css-url-change-1.0.1.tgz#c694d9e8b4beb26a16f771d91f1cd8ac7c2c7810"
   dependencies:
-    gulp-util latest
-    rework "~1.0.1"
-    rework-plugin-url "~1.0.1"
-    through2 "~1.0.0"
+    gulp-util "^3.0.8"
+    rework "^1.0.1"
+    rework-plugin-url "^1.1.0"
+    through2 "^2.0.3"
 
 gulp-csso@^3.0.1:
   version "3.0.1"
@@ -2994,7 +2994,7 @@ gulp-util@^2.2.14:
     through2 "^0.5.0"
     vinyl "^0.2.1"
 
-gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.2, gulp-util@^3.0.4, gulp-util@^3.0.7, gulp-util@latest:
+gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.2, gulp-util@^3.0.4, gulp-util@^3.0.7, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -6015,7 +6015,7 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
-readable-stream@~1.1.10, readable-stream@~1.1.9:
+readable-stream@~1.1.9:
   version "1.1.14"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
   dependencies:
@@ -6225,9 +6225,9 @@ rework-plugin-function@^1.0.0:
   dependencies:
     rework-visit "^1.0.0"
 
-rework-plugin-url@~1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/rework-plugin-url/-/rework-plugin-url-1.0.1.tgz#52707859f1d87fcbcf66663f771f5e88a138d746"
+rework-plugin-url@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rework-plugin-url/-/rework-plugin-url-1.1.0.tgz#ab53e8b1057b9d5ecc1c8273ff7db18608375c45"
   dependencies:
     rework-plugin-function "^1.0.0"
 
@@ -6235,7 +6235,7 @@ rework-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/rework-visit/-/rework-visit-1.0.0.tgz#9945b2803f219e2f7aca00adb8bc9f640f842c9a"
 
-rework@~1.0.1:
+rework@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/rework/-/rework-1.0.1.tgz#30806a841342b54510aa4110850cd48534144aa7"
   dependencies:
@@ -7029,13 +7029,6 @@ through2@^0.6.0, through2@^0.6.1:
   dependencies:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
-
-through2@~1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/through2/-/through2-1.0.0.tgz#2445cd8dfe74285dee5dada055e0571d01ff17ac"
-  dependencies:
-    readable-stream "~1.1.10"
-    xtend "~2.1.1"
 
 through@2, through@^2.3.6, through@^2.3.8, through@~2.3, through@~2.3.1:
   version "2.3.8"
