@@ -3,14 +3,13 @@
 3. В терминале для Windows __yarn add global gulp__ и для Unix __sudo yarn add global gulp__
 4. Клонируем git clone https://github.com/linedotwww/mockup.git
 5. Переходим в папку, там командой yarn install устанавливаем все
-6. Временное решение, в файле node_modules/gulp-css-url-adjuster/index.js нужно заменить строчку ```javascript if (url.indexOf('data:') === 0) {``` на ```javascriptif (url.indexOf('data:') === 0 || url.indexOf('http') === 0 || url.indexOf('font') === 0) {```
-7. Теперь подключать файлы в __templates/main/source/styles/style.scss__ не нужно, все подключается автоматом
-8. Пользовательские стили могут лежать тут __templates/main/source/styles/users__, либо в компонентах
-9. В компонентах можно создавать json файлы, пример лежит в меню и потом работать с данными в шаблоне
-10. В стилях путь к картинкам не прописываем, только название файла, пути в html файлах можем прописывать как ```html <img src="{{src}}logo.png" alt="" class="logo__pic">```
-11. Папка __templates/main/source/js/libs и templates/main/source/js/static__ все содержимое переносится, в __libs__ только библиотеки должны лежать.
-12. Этот файл __templates/main/source/js/static/frontend-works.js__ специальный, сюда складываем __ajax__ и т.д, что в будущем программист перенесет на сайт, так как он потом при натяжке подключаться не будет
-13. Для иконок svg используется сервис __https://icongr.am/__ , подключается в стилях просто ```css background: url(https://icongr.am/fontawesome/ambulance.svg?size=34&color=000000);```, плюс использовать можно ```css background: svg-load('auth.svg', fill='#c70000') no-repeat;``` для него файлы svg сохраняем в папку __templates/main/source/images/svg-icons__
-14. Настройки лежат тут __main.config.json__
-15. Все повтояющиеся блоки выносим в __компоненты__
-16. Две команды есть, __gulp__ и __gulp build__
+6. Теперь подключать файлы в __templates/main/source/styles/style.scss__ не нужно, все подключается автоматом
+7. Пользовательские стили могут лежать тут __templates/main/source/styles/users__, либо в компонентах
+8. В компонентах можно создавать json файлы, пример лежит в меню и потом работать с данными в шаблоне
+9. В стилях путь к картинкам не прописываем, только название файла, пути в html файлах можем прописывать как ```html <img src="{{src}}logo.png" alt="" class="logo__pic">```
+10. Папка __templates/main/source/js/libs и templates/main/source/js/static__ все содержимое переносится, в __libs__ только библиотеки должны лежать.
+11. Этот файл __templates/main/source/js/static/frontend-works.js__ специальный, сюда складываем __ajax__ и т.д, что в будущем программист перенесет на сайт, так как он потом при натяжке подключаться не будет
+12. Для иконок svg используется сервис __https://icongr.am/__ , подключается в стилях просто ```css background: url(https://icongr.am/fontawesome/ambulance.svg?size=34&color=000000);```, плюс использовать можно ```css background: svg-load('auth.svg', fill='#c70000') no-repeat;``` для него файлы svg сохраняем в папку __templates/main/source/images/svg-icons__
+13. Настройки лежат тут __main.config.json__
+14. Все повтояющиеся блоки выносим в __компоненты__
+15. Две команды есть, __gulp__ и __gulp build__
