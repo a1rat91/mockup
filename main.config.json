@@ -17,10 +17,10 @@
 						"./templates/main/source/js/static/**/*"
 					],
 					"src": [
+						"!./templates/main/source/js/plugins/optional/**/*.js",
+						"!./templates/main/source/js/plugins/**/_+(*.js)",
 						"./templates/main/source/js/plugins/**/*.js",
-						"./templates/main/source/js/users/**/*.js",
-						"!./templates/main/source/js/plugins/_(**)/",
-						"!./templates/main/source/js/plugins/**/_(*.js)"
+						"./templates/main/source/js/users/**/*.js"
 					]
 				},
 				"svg": {
