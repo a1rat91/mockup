@@ -183,6 +183,17 @@ gulp.task('fonts', () => {
 		.pipe(gulp.dest(config.src.build.fonts.dest));
 });
 
+gulp.task('data', () => {
+	return gulp.src(config.src.source.data.src)
+		.pipe(plugins.ChangedInPlace())
+		.pipe(plugins.plumber({
+			errorHandler: (err) => {
+				console.log(err)
+			}
+		}))
+		.pipe(gulp.dest(config.src.build.data.dest));
+});
+
 gulp.task('images', () => {
 
 	return gulp.src(config.src.source.images.src)
@@ -287,6 +298,9 @@ gulp.task('watch', () => {
 	plugins.watch(config.src.watch.json, () => {
 		gulp.start('mergeJson');
 	});
+	plugins.watch(config.src.watch.data, () => {
+		gulp.start('data');
+	});
 	plugins.watch(config.src.watch.images, () => {
 		gulp.start('images');
 	});
@@ -313,7 +327,7 @@ gulp.task('build:clean', () => {
 });
 
 gulp.task('default', ['watch', 'webserver']);
-gulp.task('build', ['svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax']);
+gulp.task('build', ['svg', 'fonts', 'images', 'js', 'nunjucks', 'css', 'ajax', 'data']);
 
 
 function isMax(mq) {
