@@ -41,7 +41,7 @@ $(document).ready(function () {
 
 	hamburger('js-hamburger', "js-menu");
 
-	$("[type=tel]").mask("+7 (999) 999-99-99");
+	$("[type=tel]").inputmask("+7 (999) 999-99-99");
 
 	// Прибивка адаптивного футера к низу
 	(function (footerSelector, wrapperSelector) {
