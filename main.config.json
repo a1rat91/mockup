@@ -78,10 +78,13 @@
 			},
 			"watch": {
 				"data": "./templates/main/source/data/**/*",
-				"json": [
+				"json": {
+					"src": [
 						"./templates/main/source/components/**/*.json",
 						"./templates/main/source/pages/*.json"
-				],
+					],
+					"dest": "./templates/main/source/data-json/*.json"
+				},
 				"html": [
 					"./templates/main/source/pages/*.html",
 					"./templates/main/source/components/**/*.html",

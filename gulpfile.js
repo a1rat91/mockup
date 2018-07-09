@@ -185,7 +185,7 @@ gulp.task('fonts', () => {
 
 gulp.task('data', () => {
 	return gulp.src(config.src.source.data.src)
-		.pipe(plugins.ChangedInPlace())
+		.pipe(plugins.changedInPlace())
 		.pipe(plugins.plumber({
 			errorHandler: (err) => {
 				console.log(err)
@@ -295,8 +295,12 @@ gulp.task('watch:mergeJson', () => {
 });
 
 gulp.task('watch', () => {
-	plugins.watch(config.src.watch.json, () => {
+	plugins.watch(config.src.watch.json.src, () => {
 		gulp.start('mergeJson');
+	});
+	plugins.watch(config.src.watch.json.dest, () => {
+		gulp.start('nunjucks');
+		gulp.start('ajax');
 	});
 	plugins.watch(config.src.watch.data, () => {
 		gulp.start('data');
