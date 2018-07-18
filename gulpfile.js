@@ -175,6 +175,7 @@ gulp.task('nunjucks', () => {
 
 gulp.task('fonts', () => {
 	return gulp.src(config.src.source.fonts.src)
+		.pipe(plugins.changedInPlace())
 		.pipe(plugins.plumber({
 			errorHandler: (err) => {
 				console.log(err)
