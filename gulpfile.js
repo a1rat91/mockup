@@ -102,10 +102,10 @@ gulp.task('css', () => {
 			]
 		}))
 		.pipe(plugins.sass())
-		.pipe(plugins.cssUrlChange({
-			prepend: '../images/'
-		}))
 		.pipe(plugins.postcss(processors))
+		// .pipe(plugins.cssUrlChange({
+		// 	prepend: '../images/'
+		// }))
 		.pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(config.src.build.css.dest))
 		.pipe(browserSync.reload({ stream: true }));
