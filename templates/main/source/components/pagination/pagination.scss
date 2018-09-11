@@ -1,7 +1,8 @@
 .pagination {
 	display: flex;
 	align-items: center;
-	margin-bottom: 80px;
+	margin: initial;
+	max-width: initial; 
 
 	&__prev {
 		margin-right: 10px;

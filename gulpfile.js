@@ -84,7 +84,7 @@ gulp.task('css', () => {
 			sort: sortMediaQueries
 		}),
 		cssnano({
-			'zindex': false
+			preset: 'advanced',
 		})
 	];
 
