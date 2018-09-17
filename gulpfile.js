@@ -47,11 +47,11 @@ gulp.task('js', () => {
 				console.log(err)
 			}
 		}))
-		.pipe(plugins.sourcemaps.init())
+		// .pipe(plugins.sourcemaps.init())
 		.pipe(plugins.concat('script.js'))
 		.pipe(plugins.rename('script.min.js'))
 		.pipe(plugins.if(config.compress.js, plugins.uglify()))
-		.pipe(plugins.sourcemaps.write('.'))
+		// .pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(config.src.build.js.dest))
 		.on('end', browserSync.reload);
 
@@ -83,9 +83,9 @@ gulp.task('css', () => {
 		mqPacker({
 			sort: sortMediaQueries
 		}),
-		cssnano({
-			preset: 'advanced',
-		})
+		// cssnano({
+		// 	preset: 'advanced',
+		// })
 	];
 
 	return gulp.src(config.src.source.css.src)
@@ -94,7 +94,7 @@ gulp.task('css', () => {
 				console.log(err)
 			}
 		}))
-		.pipe(plugins.sourcemaps.init())
+		// .pipe(plugins.sourcemaps.init())
 		.pipe(plugins.sassGlob({
 			ignorePaths: [
 				'./templates/main/source/styles/base/variables.scss',
@@ -106,7 +106,7 @@ gulp.task('css', () => {
 		// .pipe(plugins.cssUrlChange({
 		// 	prepend: '../images/'
 		// }))
-		.pipe(plugins.sourcemaps.write('.'))
+		// .pipe(plugins.sourcemaps.write('.'))
 		.pipe(gulp.dest(config.src.build.css.dest))
 		.pipe(browserSync.reload({ stream: true }));
 });
@@ -114,9 +114,9 @@ gulp.task('css', () => {
 var configHtml = {
 	'indent_size': 1,
 	'indent_char': '\t',
-	'max_char': 78,
 	'brace_style': 'expand',
-	'unformatted': ['sub', 'sup', 'b', 'u']
+	'space_before_conditional': false,
+	'unformatted': ['sub', 'sup', 'b', 'u', 'span', 'a', 'br']
 }
 
 // De-caching for Data files
@@ -175,7 +175,6 @@ gulp.task('nunjucks', () => {
 
 gulp.task('fonts', () => {
 	return gulp.src(config.src.source.fonts.src)
-		.pipe(plugins.changedInPlace())
 		.pipe(plugins.plumber({
 			errorHandler: (err) => {
 				console.log(err)
