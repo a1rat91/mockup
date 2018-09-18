@@ -25,9 +25,9 @@ var detectMobile = /Android|iPhone|iPad|iPod|BlackBerry|WPDesktop|IEMobile|Opera
 var head = document.querySelector('head');
 
 if(detectMobile) {
-	addEl('meta', { name: 'HandheldFriendly', content: 'True' }, '', head);
-	addEl('meta', { name: 'format-detection', content: 'telephone=yes' }, '', head);
-	addEl('meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }, '', head);
-	addEl('meta', { name: 'MobileOptimized', content: '320' }, '', head);
-	addEl('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' }, '', head);
+	addEl('meta', { name: 'HandheldFriendly', content: "True" }, '', head);
+	addEl('meta', { name: 'format-detection', content: "telephone=yes" }, '', head);
+	addEl('meta', { name: 'apple-mobile-web-app-title', content: "Setano" }, '', head);
+	addEl('meta', { name: 'MobileOptimized', content: "320" }, '', head);
+	addEl('meta', { name: 'viewport', content: "width=device-width, initial-scale=1, user-scalable=no" }, '', head);
 }
