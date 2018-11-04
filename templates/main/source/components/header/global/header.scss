@@ -1,6 +1,9 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+	background: #3B3B3B;
+	padding: 30px 0;
+	position: relative;
 
 	.header-inner & {
 		flex-direction: row-reverse;
@@ -12,5 +15,15 @@
 
 	&__phone {
 
+	}
+	
+	&__blocks {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+	
+	&__block {
+	
 	}
 }

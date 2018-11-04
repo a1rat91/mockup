@@ -1,6 +1,12 @@
 $(document).ready(function () {
 
 	window.globalPopup = new Popup();
+	
+	$('#js-hamburger').click(function () {
+		
+		$(this).toggleClass('active');
+		$('#js-menu').toggleClass('active');
+	});
 
 	$("[type=tel]").inputmask("+7 (999) 999-99-99");
 

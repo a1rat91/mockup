@@ -10,12 +10,15 @@
 
 	&__link {
 		display: block;
-		padding: 5px 10px;
-		color: rgba(#000,0.8);
-		font-weight: 700;
-
+		color: #fff;
+		font-weight: 400;
+		font-family: $sf;
+		padding: 5px 15px;
+		font-size: 22px;
+		text-transform: uppercase;
+		
 		&:hover {
-			color: #014c8c;
+			color: #fff;
 		}
 	}
 
@@ -29,7 +32,7 @@
 
 		&.active {
 			transform: scale(1);
-			background: #fff;
+			background: #3B3B3B;
 			z-index: 10;
 		}
 
