@@ -14,6 +14,8 @@
 </head>
 
 
+
+
 <body>
 
 	<div class="wrapper" id="js-wrapper">
@@ -129,6 +131,24 @@
 
 					<div class="icon icon_auth2"></div>
 					<!-- /.icon icon_auth -->
+
+
+
+					<form name="request" method="POST" action="php/function-send-form.php" class="sendler form form_main-slider">
+						<div class="form__input-wrap">
+							<span class="form__input-tel">+7 |</span>
+							<!-- /.form__input-tel -->
+							<input name="phone" title="Заполните телефон" tabindex="1" confirminfo=".response" type="tel" class="form__input input Y-required" required="required">
+							<!-- /.form__input -->
+						</div>
+						<!-- /.form__input-wrap -->
+
+						<input name="message" title="Наименование формы" class="Y-required hidden" tabindex="3" confirminfo=".response" value="Форма на главной">
+						<button class="form__btn btn" type="submit">Заказать</button>
+						<!-- /.form__btn btn -->
+					</form>
+					<!-- /.form .form_main-slider -->
+
 
 
 					<div class="text-default">

@@ -1,5 +1,7 @@
 {% include 'head/head.html' %}
 
+{% import "macros/macros.html" as form %}
+
 <body>
 
 <div class="wrapper" id="js-wrapper">
@@ -49,7 +51,8 @@
 
 				<div class="icon icon_auth2"></div>
 				<!-- /.icon icon_auth -->
-
+				
+				{{ form.form(modifier="main-slider", from="Форма на главной") }}
 
 				<div class="text-default">
 
